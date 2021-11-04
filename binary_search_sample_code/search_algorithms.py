@@ -1,6 +1,6 @@
-''' 
+"""
 Implementations of various search algorithms
-'''
+"""
 from typing import List
 from random import randint
 
@@ -40,4 +40,4 @@ def linear_find(items, search_val):
         if item == search_val:
             return dex
 
-# See binary_demo.py for the binary search implementation
+# See binary_search.py for the binary search implementation
