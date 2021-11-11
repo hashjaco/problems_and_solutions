@@ -42,21 +42,17 @@ Constraints:
 0 <= haystack.length, needle.length <= 5 * 104
 haystack and needle consist of only lower-case English characters.
 """
+# def str_str(haystack: str, needle: str) -> int:
+#     if len(needle) == 0:
+#         return 0
+#     for i, char in enumerate(haystack):
+#         if i + len(needle) > len(haystack):
+#             return -1
+#         if haystack[i:i+len(needle)] == needle:
+#             return i
+#     return -1
 
 
 def str_str(haystack: str, needle: str) -> int:
-    if not needle:
-        return 0
-
-    n_chars_found, index_of_needle = 0, 0
-
-    for hay_pos, hay_char in enumerate(haystack):
-        if needle[n_chars_found] == hay_char:
-            index_of_needle = hay_pos if n_chars_found == 0 else index_of_needle
-            n_chars_found += 1
-            if n_chars_found == len(needle):
-                return index_of_needle
-        else:
-            n_chars_found = 0
-    return -1
+    return haystack.index(needle) if needle in haystack else -1
 
