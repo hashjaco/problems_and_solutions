@@ -1,5 +1,3 @@
-import math
-
 """ 69. SQRT(X)
 Given a non-negative integer x, compute and return the square root of x.
 
@@ -10,7 +8,6 @@ Note: You are not allowed to use any built-in exponent function or operator, suc
  
 
 Example 1:
-
 Input: x = 4
 Output: 2
 Example 2:
@@ -29,7 +26,16 @@ test = [4, 2, 9, 27, 49]
 
 
 def my_sqrt(x: int) -> int:
-    pass
+    low, mid, high = 0, 0, x
+    while low < high:
+        mid = (low + high) // 2
+        if mid * mid == x:
+            return mid
+        if mid * mid < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return high - 1 if high * high > x else high
 
 
 for i in test:
